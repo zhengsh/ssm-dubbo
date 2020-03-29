@@ -1,0 +1,15 @@
+server:
+  port: 8201
+
+dubbo:
+  application:
+    name: user-service
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+  protocol:
+    name: dubbo
+    port: 8082
+#  监控中心
+#  monitor:
+#    protocol: registry
