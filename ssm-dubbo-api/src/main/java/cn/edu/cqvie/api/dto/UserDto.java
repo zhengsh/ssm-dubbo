@@ -1,8 +1,8 @@
-package cn.edu.cqvie.provider.domain;
+package cn.edu.cqvie.api.dto;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class UserDto implements Serializable {
 
     private Long id;
 

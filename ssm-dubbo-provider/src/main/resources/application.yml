@@ -1,15 +1,17 @@
 server:
-  port: 8201
+  port: 18080
 
-dubbo:
+spring:
   application:
     name: user-service
-  registry:
-    address: 127.0.0.1:2181
-    protocol: zookeeper
+
+dubbo:
   protocol:
     name: dubbo
-    port: 8082
-#  监控中心
-#  monitor:
-#    protocol: registry
+    port: 7788
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    username: user-name
+  metadata-report:
+    # dubbo-admin需要这个配置上报meta信息
+    address: zookeeper://127.0.0.1:2181

@@ -21,7 +21,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--spring boot 2.2.2-->
+            <!-- Spring Boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -30,7 +30,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Apache Dubbo 2.7.5  -->
+            <!-- Apache Dubbo  -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-dependencies-bom</artifactId>
@@ -41,21 +41,30 @@
 
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>3.6.0</version>
+                <groupId>cn.edu.cqvie</groupId>
+                <artifactId>ssm-dubbo-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-recipes</artifactId>
-                <version>4.2.0</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
