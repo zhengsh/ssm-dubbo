@@ -14,3 +14,5 @@ dubbo:
   metadata-report:
     # dubbo-admin需要这个配置上报meta信息
     address: zookeeper://127.0.0.1:2181
+  application:
+    name: ${spring.application.name}
