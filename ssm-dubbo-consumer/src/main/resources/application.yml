@@ -10,6 +10,12 @@ embedded:
     port: 2181
 
 dubbo:
+  protocol:
+    name: dubbo
+    port: -1
   registry:
     address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
     file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+  metadata-report:
+    # dubbo-admin需要这个配置上报meta信息
+    address: zookeeper://127.0.0.1:2181

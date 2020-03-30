@@ -18,12 +18,9 @@ public class DubboConsumer8200 {
     @Reference
     private UserService userService;
 
-
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumer8200.class);
     }
-
-
 
     @Bean
     public ApplicationRunner runner() {

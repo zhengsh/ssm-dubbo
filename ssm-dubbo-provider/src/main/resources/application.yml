@@ -8,7 +8,7 @@ spring:
 dubbo:
   protocol:
     name: dubbo
-    port: 7788
+    port: -1
   registry:
     address: zookeeper://127.0.0.1:2181
     username: user-name
