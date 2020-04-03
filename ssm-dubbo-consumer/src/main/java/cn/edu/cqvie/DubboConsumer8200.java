@@ -1,4 +1,4 @@
-package cn.edu.cqvie.consumer;
+package cn.edu.cqvie;
 
 import cn.edu.cqvie.api.dto.UserDto;
 import cn.edu.cqvie.api.service.UserService;
@@ -15,20 +15,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class DubboConsumer8200 {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
-
-    @Reference
-    private UserService userService;
-
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumer8200.class);
-    }
-
-    @Bean
-    public ApplicationRunner runner() {
-        return args -> {
-            UserDto dto = userService.findById(1L);
-            logger.info(dto.getName());
-        };
     }
 }
