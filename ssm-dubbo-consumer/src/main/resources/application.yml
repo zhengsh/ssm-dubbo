@@ -9,10 +9,12 @@ dubbo:
   # 全局超时
   consumer:
     check: false
+    timeout: 5000
+    retries: 3
   # 统一设置服务提供方的规则
   provider:
-    timeout: 2000
-    retries: 5
+    timeout: 5000
+    retries: 3
   protocol:
     name: dubbo
     port: -1

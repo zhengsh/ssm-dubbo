@@ -13,7 +13,7 @@ import java.util.UUID;
 @org.apache.dubbo.config.annotation.Service(version = "1.0.0")
 public class OrderServiceImpl implements OrderService {
 
-    @Reference(version = "*")
+    @Reference(version = "1.0.0", stub = "cn.edu.cqvie.service.impl.UserServiceStub")
     private UserService userService;
 
     @Override
