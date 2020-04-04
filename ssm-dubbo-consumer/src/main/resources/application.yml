@@ -1,15 +1,18 @@
 server:
-  port: 18090
+  port: 8200
 
 spring:
   application:
-    name: consumer-service
+    name: order-service
 
 dubbo:
-  reference:
-    check: false
+  # 全局超时
   consumer:
     check: false
+  # 统一设置服务提供方的规则
+  provider:
+    timeout: 2000
+    retries: 5
   protocol:
     name: dubbo
     port: -1

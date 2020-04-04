@@ -13,6 +13,7 @@ public class OrderController {
 
     @GetMapping("/order/createOrder")
     public String createOrder() {
-        return orderService.createOrder(null).getOrderCode();
+
+            return orderService.createOrder(null).getOrderCode();
     }
 }

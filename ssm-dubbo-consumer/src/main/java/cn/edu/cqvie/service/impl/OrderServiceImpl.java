@@ -5,16 +5,15 @@ import cn.edu.cqvie.api.dto.UserDto;
 import cn.edu.cqvie.api.service.OrderService;
 import cn.edu.cqvie.api.service.UserService;
 import org.apache.dubbo.config.annotation.Reference;
-import org.apache.dubbo.config.annotation.Service;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-@Component
 @Service
+@org.apache.dubbo.config.annotation.Service(version = "1.0.0")
 public class OrderServiceImpl implements OrderService {
 
-    @Reference
+    @Reference(version = "*")
     private UserService userService;
 
     @Override
