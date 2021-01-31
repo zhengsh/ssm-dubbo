@@ -13,7 +13,12 @@ import java.util.UUID;
 @org.apache.dubbo.config.annotation.Service(version = "1.0.0")
 public class OrderServiceImpl implements OrderService {
 
-    @Reference(version = "1.0.0", stub = "cn.edu.cqvie.service.impl.UserServiceStub")
+
+    //权重
+    @Reference(version = "1.0.0", loadbalance = "roundrobin")
+    //直联注册中心
+    //@Reference(version = "1.0.0", url ="dubbo://192.168.1.4:20881")
+    //@Reference(version = "1.0.0", stub = "cn.edu.cqvie.service.impl.UserServiceStub")
     private UserService userService;
 
     @Override

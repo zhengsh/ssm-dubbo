@@ -2,6 +2,7 @@ package cn.edu.cqvie.provider.service.impl;
 
 import cn.edu.cqvie.api.dto.UserDto;
 import cn.edu.cqvie.api.service.UserService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 @org.apache.dubbo.config.annotation.Service(version = "1.0.0")
 public class UserServiceImplV1 implements UserService {
 
+    @HystrixCommand
+    @Override
     public UserDto findById(Long id) {
         log.info("UserService.findById [1.0.0] invoke!");
         try {
